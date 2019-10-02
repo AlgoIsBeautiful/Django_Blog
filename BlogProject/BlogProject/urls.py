@@ -15,7 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# from blog import views
+from django.conf.urls import url
+
+# we want import that views2.py
+# the path ('http://127.0.0.1:8000/****') to replace here
+# urlpatterns = [
+#     path('contact/', views.contact_view, name='contact'),
+#     path('about/', views.about_view, name='about'),
+#     path('', views.home_view, name='home'),
+#     path('admin/', admin.site.urls),
+#     path('admin/blog/article/', views.articles, name='article'),
+# ]
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('blog.urls'))
 ]

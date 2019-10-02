@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8594ad65-3053-41fa-8216-942dea43c4e8" name="Default Changelist" comment="" />
+    <list default="true" id="8594ad65-3053-41fa-8216-942dea43c4e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlogProject/blog/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlogProject/blog/static/blog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlogProject/blog/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlogProject/blog/views2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlogProject/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlogProject/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlogProject/templates/post_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlogProject/templates/post_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlogProject/templates/post_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlogProject/Django/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlogProject/Django/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlogProject/Django/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlogProject/Django/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlogProject/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/BlogProject/blog/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlogProject/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/BlogProject/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlogProject/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/BlogProject/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlogProject/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/BlogProject/db.sqlite3" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +35,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1RaABvjXvVu1gGiT6HPMnqJmPSG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -67,5 +95,19 @@
       <updated>1569894700749</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

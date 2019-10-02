@@ -25,8 +25,8 @@ SECRET_KEY = 'ewkk*7s345td+!8d=2gga#1=4c!030dee#c0y3l)unok8yht^w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ALLOWED_HOSTS = ['www.datasciencegeek.dev']
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'BlogProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [], #'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
