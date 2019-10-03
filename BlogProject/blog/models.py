@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.conf import settings
+from django.urls import reverse
+from django.utils.six import python_2_unicode_compatible
 
 # create models here
 
@@ -36,6 +37,11 @@ class Post(models.Model):
 
 	def __str__(self):
 		return self.title
+
+	def get_absolute_url(self):
+		# reverse function, the first parameter is 'blog:detail' name=detail
+		return reverse('blog:detail', kwargs={'pk': self.pk})
+
 
 # class Post(models.Model):
 # 	'''
