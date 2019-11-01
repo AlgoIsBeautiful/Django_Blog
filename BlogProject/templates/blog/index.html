@@ -20,12 +20,13 @@
             <div class="entry-content clearfix">
                 <p>{{ post.abstract }}</p>
                 <div class="read-more cl-effect-14">
-                    <a href="{{ post.get_absolute_url }}" class="more-link"> Read More <span class="meta-nav">→</span></a>
+                    <a href="{{ post.get_absolute_url }}" class="more-link"> Read More <span class="meta-nav">→</span>
+                    </a>
                 </div>
             </div>
         </article>
     {% empty %}
-        <div class="no-post"> cannot post more articles ! </div>
+        <div class="no-post"> No articles ! </div>
     {% endfor %}
         <!-- 简单分页效果
         <div class="pagination-simple">
