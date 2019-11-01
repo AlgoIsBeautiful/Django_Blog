@@ -6,20 +6,21 @@ from django.utils import timezone
 from .models import Post, Category
 import markdown
 
-# Create your views here.
+
 def index(request):
     post_list = Post.objects.all().order_by('-created_time')
     return render(request, 'index.html', context={'post_list': post_list})
 
-
 def detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    post.body = markdown.markdown(post.body, extensions=['markdown.extensions.extra',
-                                                         'markdown.extensions.codehilite',
-                                                         'markdown.extensions.toc',
-                                                         ])
-    form = CommentForm()
     comment_list = post.comment_set.all()
+    post.body = markdown.markdown(post.body,
+                                  extensions=[
+                                      'markdown.extensions.extra',
+                                      'markdown.extensions.codehilite',
+                                      'markdown.extensions.toc',
+                                  ])
+    form = CommentForm()
     context = {'post': post,
                'form': form,
                'comment_list': comment_list
@@ -27,24 +28,15 @@ def detail(request, pk):
     return render(request, 'detail.html', context=context)
 
 
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'post_list.html', {'posts': posts})
-
-
-def post_detail(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    return render(request, 'post_detail.html', {'post': post})
-
 def archives(request, year, month):
-    post_list = Post.objects.filter(created_time__year=year, created_time__month=month).order_by('-created_time')
-    return render(request, 'index.html', context={
-        'post_list': post_list
-    })
+    post_list = Post.objects.filter(created_time__year=year,
+                                    created_time__month=month
+                                    ).order_by('-created_time')
+    return render(request, 'index.html', context={'post_list': post_list})
+
 
 def category(request, pk):
     cate = get_object_or_404(Category, pk=pk)
     post_list = Post.objects.filter(category=cate).order_by('-created_time')
     return render(request, 'index.html', context={'post_list': post_list})
-
 

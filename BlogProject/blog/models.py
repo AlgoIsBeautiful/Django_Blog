@@ -43,6 +43,8 @@ class Post(models.Model):
 		# reverse function, the first parameter is 'blog:detail' name=detail
 		return reverse('blog:detail', kwargs={'pk': self.pk})
 
+	class Meta:
+		ordering = ['-created_time']
 
 # class Post(models.Model):
 # 	'''
