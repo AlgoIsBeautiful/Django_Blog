@@ -4,14 +4,15 @@ from django.db.models.aggregates import Count
 
 register = template.Library()
 
-
+# decorate get_recent_posts to register.simple_tag
+# then, you can use {% get_recent_posts %} function
 @register.simple_tag
-def get_recent_posts(num=3):
+def get_recent_posts(num=5):
     return Post.objects.all().order_by('-created_time')[:num]
 
 
 @register.simple_tag
-def get_archives():
+def archives():
     return Post.objects.dates('created_time', 'month', order='DESC')
 
 

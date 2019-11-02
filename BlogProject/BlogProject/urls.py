@@ -20,28 +20,10 @@ from django.contrib import admin
 # we want import that views2.py
 # the path ('http://127.0.0.1:8000/****') to replace here
 urlpatterns = [
-    url('^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
     url(r'', include('blog.urls')),
     url(r'', include('comments.urls')),
     # url(r'^search/', include('haystack.urls')),
 ]
-# from django.contrib import admin
-# from django.urls import path, include
-#
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     #path('', include('blog.urls'))
-# ]
-#
-#     path('contact/', views.contact_view, name='contact'),
-#     path('about/', views.about_view, name='about'),
-#     path('', views.home_view, name='home'),
-#     path('^admin/', admin.site.urls),
-#     path('admin/blog/article/', views.articles, name='article'),
-# ]
-# from django.contrib import admin
-# from django.urls import path, include
-#
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     #path('', include('blog.urls'))
+# example:
+# detail(request, pk=255)

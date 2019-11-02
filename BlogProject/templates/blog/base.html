@@ -89,7 +89,7 @@
                 </div>
                 <div class="widget widget-archives">
                     <h3 class="widget-title">Time Lines</h3>
-                    {% get_archives as date_list %}
+                    {% archives as date_list %}
                     <ul>
                         {% for date in date_list %}
                         <li>
@@ -98,7 +98,7 @@
                             </a>
                         </li>
                         {% empty %}
-                        no article
+                            no article
                         {% endfor %}
                     </ul>
                 </div>
@@ -112,7 +112,7 @@
                             <a href="{% url 'blog:category' category.pk %}">{{ category.name }}</a>
                         </li>
                         {% empty %}
-                        no article
+                            no article
                         {% endfor %}
                     </ul>
                 </div>

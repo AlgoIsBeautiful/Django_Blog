@@ -1,10 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from blog.models import Post
-from markdown import  markdown
 
 from .models import Comment
 from .forms import CommentForm
-
 
 def post_comment(request, post_pk):
     post = get_object_or_404(Post, pk=post_pk)
@@ -15,6 +13,7 @@ def post_comment(request, post_pk):
             comment.post = post
             comment.save()
             return redirect(post)
+
         else:
             comment_list = post.comment_set.all()
             context = {'post': post,
