@@ -26,7 +26,7 @@ SECRET_KEY = 'ewkk*7s345td+!8d=2gga#1=4c!030dee#c0y3l)unok8yht^w'
 DEBUG = False
 
 # ALLOWED_HOSTS = ['www.datasciencegeek.dev']
-ALLOWED_HOSTS = ['52.70.205.165', 'www.datasciencegeek.dev', '.datasciencegeek.dev']
+ALLOWED_HOSTS = ['3.233.230.86', 'localhost', '127.0.0.1', 'www.datasciencegeek.dev', '.datasciencegeek.dev']
 
 # Application definition
 
