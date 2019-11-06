@@ -14,11 +14,11 @@
                                                               datetime="{{ post.created_time }}">{{ post.created_time }}</time></a></span>
                     <span class="post-author"><a href="#">{{ post.author }}</a></span>
                     <span class="comments-link"><a href="#">4 评论</a></span>
-                    <span class="views-count"><a href="#">588 阅读</a></span>
+                    <span class="views-count"><a href="{{ post.get_absolute_url }}">{{ post.views}} read</a></span>
                 </div>
             </header>
             <div class="entry-content clearfix">
-                <p>{{ post.abstract }}</p>
+                <p>{{ post.excerpt }}...</p>
                 <div class="read-more cl-effect-14">
                     <a href="{{ post.get_absolute_url }}" class="more-link"> Read More <span class="meta-nav">→</span>
                     </a>
@@ -28,13 +28,19 @@
     {% empty %}
         <div class="no-post"> No articles ! </div>
     {% endfor %}
-        <!-- 简单分页效果
+<!--        &lt;!&ndash; 简单分页效果-->
+        {% if is_paginated %}
         <div class="pagination-simple">
-            <a href="#">上一页</a>
-            <span class="current">第 6 页 / 共 11 页</span>
-            <a href="#">下一页</a>
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}">Pre page</a>
+            {% endif %}
+            <span class="current"> No. {{ page_obj.number }} Page / Total {{ paginator.num_pages }} Page</span>
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Next page</a>
+            {% endif %}
         </div>
-        -->
+        {% endif %}
+<!--        &ndash;&gt;-->
     <div class="pagination">
         <ul>
             <li><a href="">1</a></li>

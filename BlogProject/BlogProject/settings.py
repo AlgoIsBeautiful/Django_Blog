@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ewkk*7s345td+!8d=2gga#1=4c!030dee#c0y3l)unok8yht^w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['www.datasciencegeek.dev']
 ALLOWED_HOSTS = ['3.233.230.86', 'localhost', '127.0.0.1', 'www.datasciencegeek.dev', '.datasciencegeek.dev']
