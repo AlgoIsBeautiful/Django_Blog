@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog', # register blog
     'comments',
+    #'martor',
+    #'haystack',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +72,17 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'BlogProject.wsgi.application'
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = True
+# X_FRAME_OPTIONS = 'DENY'
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SECURE_BROWSER_XSS_FILTER = True
+# SECURE_HSTS_SECONDS=36000
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True
+
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -112,7 +125,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -120,3 +133,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# # martor settings
+#
+# # Global martor settings
+# # Input: string boolean, `true/false`
+# MARTOR_ENABLE_CONFIGS = {
+#     'imgur': 'false',     # to enable/disable imgur/custom uploader.
+#     'mention': 'false',  # to enable/disable mention
+#     'jquery': 'true',    # to include/revoke jquery (require for admin default django)
+#     'living': 'false',    # to enable/disable live updates in preview
+# }

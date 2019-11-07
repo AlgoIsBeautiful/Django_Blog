@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title> Ruifeng's Blog </title>
 
@@ -24,6 +25,8 @@
     <script src="{% static 'blog/js/modernizr.custom.js' %}"></script>
 </head>
 
+
+
 <body>
 <div class="container">
     <header id="site-header">
@@ -43,10 +46,10 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="cl-effect-11"><a href="index.html" data-hover="Home"><b> Home </b></a></li>
-                            <li class="cl-effect-11"><a href="full-width.html" data-hover="Blog"><b> Blog </b></a></li>
-                            <li class="cl-effect-11"><a href="about.html" data-hover="About"><b> About </b></a></li>
-                            <li class="cl-effect-11"><a href="contact.html" data-hover="Contact"><b> Contact </b></a></li>
+                            <li class="cl-effect-11"><a href="/blog/index.html" data-hover="Home"><b> Home </b></a></li>
+                            <li class="cl-effect-11"><a href="/blog/full-width.html" data-hover="Blog"><b> Blog </b></a></li>
+                            <li class="cl-effect-11"><a href="/blog/about.html" data-hover="About"><b> About </b></a></li>
+                            <li class="cl-effect-11"><a href="/blog/contact.html" data-hover="Contact"><b> Contact </b></a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -80,7 +83,7 @@
                     <ul>
                         {% for post in recent_post_list %}
                         <li>
-                            <a href="{{ post.get_absolute_url }}">{{ post.title}}</a>
+                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                         </li>
                         {% empty %}
                         no article
@@ -132,7 +135,7 @@
                     </ul>
                 </div>
                 <div class="rss">
-                    <a href=""><span class="ion-social-rss-outline"></span> RSS 订阅</a>
+                    <a href=""><span class="ion-social-rss-outline"></span> RSS </a>
                 </div>
             </aside>
         </div>
@@ -156,10 +159,10 @@
     <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="full-width.html">Blog</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog/index.html">Home</a></li>
+            <li><a href="blog/full-width.html">Blog</a></li>
+            <li><a href="blog/about.html">About</a></li>
+            <li><a href="blog/contact.html">Contact</a></li>
         </ul>
     </nav>
 </div>

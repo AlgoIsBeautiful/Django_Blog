@@ -9,7 +9,7 @@
                 <span class="post-date"><a href="#"><time class="entry-date"
                                                           datetime="{{ post.created_time }}">{{ post.created_time }}</time></a></span>
                 <span class="post-author"><a href="#">{{ post.author }}</a></span>
-                <span class="comments-link"><a href="#">4 评论</a></span>
+<!--                <span class="comments-link"><a href="#">{{ post}}</a></span>-->
                 <span class="views-count"><a href="#">{{ post.views }} read</a></span>
             </div>
         </header>
@@ -19,7 +19,7 @@
     </article>
     <section class="comment-area" id="comment-area">
         <hr>
-        <h3>发表评论</h3>
+        <h3>Post</h3>
         <form action="{% url 'comments:post_comment' post.pk %}" method="post" class="comment-form">
             {% csrf_token %}
             <div class="row">
@@ -28,16 +28,16 @@
                     {{ form.name }}
                     {{ form.name.errors }}
                 </div>
-                <div class="col-md-4">
-                    <label for="{{ form.email.id_for_label }}">Email:</label>
-                    {{ form.email }}
-                    {{ form.email.errors }}
-                </div>
-                <div class="col-md-4">
-                    <label for="{{ form.url.id_for_label }}">URL：</label>
-                    {{ form.url }}
-                    {{ form.url.errors }}
-                </div>
+<!--                <div class="col-md-4">-->
+<!--                    <label for="{{ form.email.id_for_label }}">Email:</label>-->
+<!--                    {{ form.email }}-->
+<!--                    {{ form.email.errors }}-->
+<!--                </div>-->
+<!--                <div class="col-md-4">-->
+<!--                    <label for="{{ form.url.id_for_label }}">URL：</label>-->
+<!--                    {{ form.url }}-->
+<!--                    {{ form.url.errors }}-->
+<!--                </div>-->
                 <div class="col-md-12">
                     <label for="{{ form.text.id_for_label }}">Comment</label>
                     {{ form.text }}
@@ -47,7 +47,7 @@
             </div>    <!-- row -->
         </form>
         <div class="comment-list-panel">
-            <h3>评论，共 <span>4</span> 条</h3>
+            <h3>{{ comment_list.count}} Comments</h3>
             <ul class="comment-list list-unstyled">
                 {% for comment in comment_list %}
                     <li class="comment-item">
@@ -55,11 +55,11 @@
                         <time class="submit-date"
                               datetime="{{ comment.created_time }}">{{ comment.created_time }}</time>
                         <div class="text">
-                            {{ com.text }}
+                            {{ comment.text }}
                         </div>
                     </li>
                 {% empty %}
-                    暂无评论
+                <p>No Comments </p>
                 {% endfor %}
             </ul>
         </div>
@@ -67,23 +67,27 @@
 {% endblock main %}
 {% block toc %}
     <div class="widget widget-content">
-        <h3 class="widget-title">文章目录</h3>
+        <h3 class="widget-title">Content</h3>
         <ul>
             <li>
-                <a href="#">教程特点</a>
+                <a href="#">Study hard</a>
             </li>
-            <li>
-                <a href="#">谁适合这个教程</a>
-            </li>
-            <li>
-                <a href="#">在线预览</a>
-            </li>
-            <li>
-                <a href="#">资源列表</a>
-            </li>
-            <li>
-                <a href="#">获取帮助</a>
-            </li>
+<!--            <li>-->
+<!--                <a href="#">谁适合这个教程</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="#">在线预览</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="#">资源列表</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="#">获取帮助</a>-->
+<!--            </li>-->
         </ul>
     </div>
+<!--    <div class="widget widget_categories">-->
+<!--                  <h5 class="widget-title">Table of contents</h5>-->
+<!--                  {{ post.toc|safe }}-->
+<!--		         </div>-->
 {% endblock toc %}

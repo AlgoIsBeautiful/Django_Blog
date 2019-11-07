@@ -44,7 +44,7 @@ class Post(models.Model):
 				'markdown.extensions.extra',
 				'markdown.extensions.codehilite',
 			])
-			self.excerpt = strip_tags(md.convert(self.body))[:54]
+			self.excerpt = strip_tags(md.convert(self.body))[:200]
 		super(Post, self).save(*args, **kwargs)
 
 
@@ -63,4 +63,17 @@ class Post(models.Model):
 		ordering = ['-created_time']
 
 
+class Project(models.Model):
+    name = models.CharField(max_length=120)
+    created_time = models.DateField()
+    skills = models.ManyToManyField(Tag)
+    intro = models.TextField()
+    body = models.TextField()
+    link = models.CharField(max_length=200)
+    image = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('blog:detail', kwargs={'pk': self.pk})
