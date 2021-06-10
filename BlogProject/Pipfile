@@ -7,7 +7,7 @@ verify_ssl = true
 
 [packages]
 pytz = "==2019.3"
-Django = "==1.10.6"
+Django = "==2.2.24"
 Markdown = "==3.1.1"
 Pygments = "==2.4.2"
 gunicorn = "*"
